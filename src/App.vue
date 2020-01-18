@@ -10,11 +10,23 @@ import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
+  data() {
+    return {
+Films: [],
+selectedFilms
+    }
+  }
   components: {
     HelloWorld
   }
 }
 </script>
+
+// mounted() {
+// fetch("https://ghibliapi.herokuapp.com/")
+// .then(response => response.json())
+// .then(data =>(this.data = data));
+// }
 
 <style>
 #app {
