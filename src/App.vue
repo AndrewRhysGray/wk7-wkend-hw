@@ -7,6 +7,7 @@
 
 <script>
 import filmList  from "./components/filmList.vue";
+import filmDetail from "./components/filmDetail.vue"
 
 export default {
   name: "app",
@@ -17,15 +18,17 @@ export default {
     };
   },
   components: {
-    
+
   },
 
   mounted() {
-    fetch("https://ghibliapi.herokuapp.com/")
-      .then(response => response.json())
-      .then(data => (this.data = data));
-  }
-};
+    fetch("https://api.punkapi.com/v2/beers")
+      .then(filmData => filmsData.json())
+      .then(films => (this.films = films));
+
+      eventBus.$on('film-selected', (film) => {
+        this.selectedFilm = film
+      }})
 </script>
 
 
